@@ -16,11 +16,16 @@ function Search({ allReservations, setReservationsToShow }: Props) {
       return;
     }
     const handler = setTimeout(() => {
-      const filteredReservations = allReservations.filter(
-        (reservation) =>
-          reservation.customer.firstName.toLowerCase().includes(searchQuery) ||
-          reservation.customer.lastName.toLowerCase().includes(searchQuery)
-      );
+      const filteredReservations = allReservations.filter((reservation) => {
+        const fName = reservation.customer.firstName.toLowerCase();
+        const surname = reservation.customer.lastName.toLowerCase();
+        const fullName = `${fName} ${surname}`;
+        return (
+          fName.includes(searchQuery) ||
+          surname.includes(searchQuery) ||
+          fullName.includes(searchQuery)
+        );
+      });
       setReservationsToShow(filteredReservations);
     }, 500);
 
