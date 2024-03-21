@@ -5,7 +5,8 @@ const app = express();
 const port = 3001;
 const cors = require("cors");
 app.use(cors());
-app.get("/reservations", (res) => {
+app.get("/reservations", (_, res) => {
+  console.log(res);
   res.status(200).json(data);
 });
 
