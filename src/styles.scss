@@ -1,0 +1,53 @@
+$grey: #dbdbdb;
+$main-bg: #f3f3f3;
+$section-padding: 100px;
+
+body {
+  margin: 0;
+}
+.app {
+  max-width: 100vw;
+  min-height: 100vh;
+  background-color: $main-bg;
+
+  .page-content {
+    padding: 0 $section-padding;
+    .ant-table-content {
+      overflow: auto;
+    }
+    .input-field {
+      width: 100%;
+      &.search-box {
+        justify-content: flex-end;
+      }
+    }
+    .filter-form {
+      width: 100%;
+      label {
+        display: block;
+        margin: 7px 0;
+      }
+      .action-btns {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .header {
+    height: 70px;
+    background: #fff;
+    padding: 0 $section-padding;
+    border-bottom: 1px solid $grey;
+    img {
+      height: 40%;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    $section-padding: 40px;
+    .page-content,
+    .header {
+      padding: 0 $section-padding;
+    }
+  }
+}
